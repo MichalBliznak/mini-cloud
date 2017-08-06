@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api-1-microservice" />
+        <module name="api-2-microservice" />
+        <module name="api-gateway-microservice" />
+        <module name="commons" />
+        <module name="discovery-microservice" />
+        <module name="greeting-microservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-1-microservice" target="1.8" />
+      <module name="api-2-microservice" target="1.8" />
+      <module name="api-gateway-microservice" target="1.8" />
+      <module name="commons" target="1.5" />
+      <module name="discovery-microservice" target="1.8" />
+      <module name="greeting-microservice" target="1.8" />
+      <module name="minicloud" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: api-2
+
+server:
+  port: 9006
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+ribbon:
+  eureka:
+    enabled: true
