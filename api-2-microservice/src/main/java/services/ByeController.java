@@ -23,7 +23,7 @@ public class ByeController {
         try {
             return restTemplate.getForObject("http://greeting/api?prefix={prefix}&name={name}", Greeting.class, "Bye", name);
         } catch (Exception e) {
-            return new Greeting("Ooops, something went wrong...");
+            return new Greeting("Ooops, something went wrong: " + e.getMessage());
         }
     }
 }

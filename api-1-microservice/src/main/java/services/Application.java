@@ -14,8 +14,6 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-//@EnableZuulProxy
-//@EnableHystrix
 public class Application {
 
     @LoadBalanced
