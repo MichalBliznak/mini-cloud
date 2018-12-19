@@ -1,11 +1,11 @@
 spring:
   application:
-    content: discovery
+    name: discovery
   cloud:
     config.discovery.enabled: true
 
 server:
-  port: 8761
+  port: ${DISCOVERY_PORT}
 
 eureka:
   instance:

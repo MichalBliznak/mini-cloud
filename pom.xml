@@ -8,11 +8,10 @@
     <artifactId>minicloud-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>commons</module>
         <module>discovery-microservice</module>
+        <module>greeting-microservice</module>
         <module>api-1-microservice</module>
         <module>api-2-microservice</module>
-        <module>greeting-microservice</module>
         <module>api-gateway-microservice</module>
     </modules>
     <packaging>pom</packaging>
@@ -20,7 +19,7 @@
     <parent>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-parent</artifactId>
-        <version>Brixton.BUILD-SNAPSHOT</version>
+        <version>Edgware.SR1</version>
         <relativePath/>
         <!-- lookup parent from repository -->
     </parent>
@@ -43,7 +42,22 @@
         </dependencies>
     </dependencyManagement>
 
-    <repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.10</version>
+                <configuration>
+                    <baseImage>openjdk:8-jdk-alpine</baseImage>
+                    <imageName>example</imageName>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <!--<repositories>
         <repository>
             <id>spring-snapshots</id>
             <name>Spring Snapshots</name>
@@ -69,6 +83,7 @@
             </snapshots>
         </repository>
     </repositories>
+
     <pluginRepositories>
         <pluginRepository>
             <id>spring-snapshots</id>
@@ -86,6 +101,6 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
-    </pluginRepositories>
+    </pluginRepositories>-->
 
 </project>

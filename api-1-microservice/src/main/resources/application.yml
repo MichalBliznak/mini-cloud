@@ -3,12 +3,12 @@ spring:
     name: api-1
 
 server:
-  port: 9005
+  port: ${SERVICE_PORT}
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/
+      defaultZone: http://discovery:${DISCOVERY_PORT}/eureka/
   instance:
     preferIpAddress: true
 

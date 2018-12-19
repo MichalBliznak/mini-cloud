@@ -1,0 +1,57 @@
+version: '2'
+services:
+  greeting-1:
+    image: mini-cloud/greeting-service:1
+    ports:
+      - "9001:9001"
+    environment:
+      SERVICE_PORT: 9001
+      DISCOVERY_PORT: 8761
+    depends_on:
+      - "discovery"
+  greeting-2:
+    image: mini-cloud/greeting-service:1
+    ports:
+      - "9002:9002"
+    environment:
+      SERVICE_PORT: 9002
+      DISCOVERY_PORT: 8761
+    depends_on:
+      - "discovery"
+  api-1:
+    image: mini-cloud/api-1-service:1
+    ports:
+      - "9005:9005"
+    environment:
+      SERVICE_PORT: 9005
+      DISCOVERY_PORT: 8761
+    depends_on:
+      - "greeting-1"
+      - "greeting-2"
+  api-2:
+    image: mini-cloud/api-2-service:1
+    ports:
+      - "9006:9006"
+    environment:
+      SERVICE_PORT: 9006
+      DISCOVERY_PORT: 8761
+    depends_on:
+      - "greeting-1"
+      - "greeting-2"
+  gateway:
+    image: mini-cloud/api-gateway-service:1
+    ports:
+      - "8000:8000"
+    environment:
+      SERVICE_PORT: 8000
+      DISCOVERY_PORT: 8761
+    depends_on:
+      - "api-1"
+      - "api-2"
+  discovery:
+    image: mini-cloud/discovery-server:1
+    ports:
+      - "8761:8761"
+    environment:
+      DISCOVERY_PORT: 8761
+

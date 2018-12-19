@@ -9,7 +9,6 @@
         <module name="api-1-microservice" />
         <module name="api-2-microservice" />
         <module name="api-gateway-microservice" />
-        <module name="commons" />
         <module name="discovery-microservice" />
         <module name="greeting-microservice" />
       </profile>
