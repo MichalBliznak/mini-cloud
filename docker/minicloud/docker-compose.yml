@@ -1,47 +1,33 @@
 version: '2'
 services:
-  greeting-1:
+  greeting:
     image: mini-cloud/greeting-service:1
-    ports:
-      - "9001:9001"
     environment:
-      SERVICE_PORT: 9001
-      DISCOVERY_PORT: 8761
-      WAIT_FOR_SERVICES: "discovery:8761"
-    depends_on:
-      - "discovery"
-  greeting-2:
-    image: mini-cloud/greeting-service:1
-    ports:
-      - "9002:9002"
-    environment:
-      SERVICE_PORT: 9002
+      SERVICE_PORT: 0
       DISCOVERY_PORT: 8761
       WAIT_FOR_SERVICES: "discovery:8761"
     depends_on:
       - "discovery"
   api-1:
     image: mini-cloud/api-1-service:1
-    ports:
-      - "9005:9005"
+    expose:
+      - 9005
     environment:
       SERVICE_PORT: 9005
       DISCOVERY_PORT: 8761
-      WAIT_FOR_SERVICES: "greeting-1:9001,greeting-2:9002"
+      WAIT_FOR_SERVICES: "discovery:8761"
     depends_on:
-      - "greeting-1"
-      - "greeting-2"
+      - "greeting"
   api-2:
     image: mini-cloud/api-2-service:1
-    ports:
-      - "9006:9006"
+    expose:
+      - 9006
     environment:
       SERVICE_PORT: 9006
       DISCOVERY_PORT: 8761
-      WAIT_FOR_SERVICES: "greeting-1:9001,greeting-2:9002"
+      WAIT_FOR_SERVICES: "discovery:8761"
     depends_on:
-      - "greeting-1"
-      - "greeting-2"
+      - "greeting"
   gateway:
     image: mini-cloud/api-gateway-service:1
     ports:
