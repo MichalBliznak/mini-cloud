@@ -36,6 +36,8 @@ services:
       SERVICE_PORT: 8000
       DISCOVERY_PORT: 8761
       WAIT_FOR_SERVICES: "api-1:9005,api-2:9006"
+      CLIENT_ID: e24d11242d2cb0652814
+      CLIENT_SECRET: 666ef43d226f3772a0855b69b1c6b31d39bd353a
     depends_on:
       - "api-1"
       - "api-2"
