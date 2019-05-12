@@ -1,6 +1,6 @@
 spring:
   application:
-    name: api-1
+    name: hello
 
 server:
   port: ${SERVICE_PORT}
@@ -15,3 +15,13 @@ eureka:
 ribbon:
   eureka:
     enabled: true
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: https://api.github.com/user
+      preferTokenInfo: false
+
+logging:
+  level:
+    org.springframework.security: DEBUG

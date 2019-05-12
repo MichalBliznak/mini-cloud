@@ -32,3 +32,10 @@ security:
     resource:
       userInfoUri: https://api.github.com/user
       preferTokenInfo: false
+
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
+
+logging:
+  level:
+    org.springframework.security: DEBUG
