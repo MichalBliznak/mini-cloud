@@ -1,5 +1,6 @@
 version: '2'
 services:
+
   greeting:
     image: mini-cloud/greeting-service:1
     environment:
@@ -8,6 +9,7 @@ services:
       WAIT_FOR_SERVICES: "discovery:8761"
     depends_on:
       - "discovery"
+
   api-1:
     image: mini-cloud/api-1-service:1
     expose:
@@ -18,6 +20,7 @@ services:
       WAIT_FOR_SERVICES: "discovery:8761"
     depends_on:
       - "greeting"
+
   api-2:
     image: mini-cloud/api-2-service:1
     expose:
@@ -28,6 +31,7 @@ services:
       WAIT_FOR_SERVICES: "discovery:8761"
     depends_on:
       - "greeting"
+
   gateway:
     image: mini-cloud/api-gateway-service:1
     ports:
@@ -41,6 +45,7 @@ services:
     depends_on:
       - "api-1"
       - "api-2"
+
   discovery:
     image: mini-cloud/discovery-server:1
     ports:
