@@ -1,0 +1,22 @@
+####
+# classpath and git-based solution
+####
+
+server:
+  port: ${SERVICE_PORT}
+spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      discovery:
+        enabled: true
+      server:
+        native:
+          searchLocations: classpath:config/,classpath:config/greeting
+#        encrypt.enabled: false
+#        git:
+#          uri: https://github.com/carnellj/config-repo/
+#          searchPaths: licensingservice,organizationservice
+#          username: native-cloud-apps
+#          password: 0ffended

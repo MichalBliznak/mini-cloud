@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/api-1-microservice/api-1-microservice.iml" filepath="$PROJECT_DIR$/api-1-microservice/api-1-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/api-2-microservice/api-2-microservice.iml" filepath="$PROJECT_DIR$/api-2-microservice/api-2-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/api-gateway-microservice/api-gateway-microservice.iml" filepath="$PROJECT_DIR$/api-gateway-microservice/api-gateway-microservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-microservice/config-microservice.iml" filepath="$PROJECT_DIR$/config-microservice/config-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/discovery-microservice/discovery-microservice.iml" filepath="$PROJECT_DIR$/discovery-microservice/discovery-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/greeting-microservice/greeting-microservice.iml" filepath="$PROJECT_DIR$/greeting-microservice/greeting-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/minicloud.iml" filepath="$PROJECT_DIR$/minicloud.iml" />

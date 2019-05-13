@@ -13,6 +13,7 @@
         <module>api-1-microservice</module>
         <module>api-2-microservice</module>
         <module>api-gateway-microservice</module>
+        <module>config-microservice</module>
     </modules>
     <packaging>pom</packaging>
 

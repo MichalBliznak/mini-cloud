@@ -1,11 +1,12 @@
 spring:
   application:
     name: greeting
-
-server:
-  port: ${SERVICE_PORT}
-  servlet:
-    context-path: /api
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      enabled: true
 
 eureka:
   client:

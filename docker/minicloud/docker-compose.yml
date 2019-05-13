@@ -6,9 +6,10 @@ services:
     environment:
       SERVICE_PORT: 0
       DISCOVERY_PORT: 8761
+      CONFIG_PORT: 8888
       WAIT_FOR_SERVICES: "discovery:8761"
     depends_on:
-      - "discovery"
+      - "config"
 
   api-1:
     image: mini-cloud/api-1-service:1
@@ -52,3 +53,13 @@ services:
       - "8761:8761"
     environment:
       DISCOVERY_PORT: 8761
+
+  config:
+    image: mini-cloud/config-service:1
+    ports:
+      - "8888:8888"
+    environment:
+      SERVICE_PORT: 8888
+      WAIT_FOR_SERVICES: "discovery:8761"
+    depends_on:
+      - "discovery"
