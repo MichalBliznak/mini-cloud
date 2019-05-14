@@ -13,8 +13,6 @@ services:
 
   api-1:
     image: mini-cloud/api-1-service:1
-    expose:
-      - 9005
     environment:
       SERVICE_PORT: 9005
       DISCOVERY_PORT: 8761
@@ -24,8 +22,6 @@ services:
 
   api-2:
     image: mini-cloud/api-2-service:1
-    expose:
-      - 9006
     environment:
       SERVICE_PORT: 9006
       DISCOVERY_PORT: 8761
@@ -56,8 +52,8 @@ services:
 
   config:
     image: mini-cloud/config-service:1
-    ports:
-      - "8888:8888"
+    expose:
+      - 8888
     environment:
       SERVICE_PORT: 8888
       WAIT_FOR_SERVICES: "discovery:8761"

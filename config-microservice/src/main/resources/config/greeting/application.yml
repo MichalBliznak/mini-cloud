@@ -1,4 +1,2 @@
-server:
-  port: ${SERVICE_PORT}
-  servlet:
-    context-path: /api
+message:
+  prefix: "Message: "
